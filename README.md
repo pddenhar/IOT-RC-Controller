@@ -5,7 +5,7 @@ Simple controller appication for an RC car using an ESP8266 using the MRPC proto
 
 Dependencies
 ------------
-Clone [android-mrpc](https://github.com/alex-sherman/android-mrpc) into the same directory that you cloned IOT-RC-Controller into. 
+Clone [android-mrpc](https://github.com/alex-sherman/android-mrpc) into the same parent directory that you cloned IOT-RC-Controller into. 
 
 It is required for the project to compile. If you want to clone it somewhere else, change the projectDir setting in settings.gradle to the correct path. 
 
