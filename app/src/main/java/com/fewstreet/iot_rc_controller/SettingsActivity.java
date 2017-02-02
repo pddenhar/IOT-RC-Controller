@@ -15,8 +15,13 @@ public class SettingsActivity extends PreferenceActivity {
 
     public static float getThrottleRange(Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        //minimum distance is in meters
         float value = Float.parseFloat(sharedPref.getString("throttle_range", "1.0"));
+        return value;
+    }
+
+    public static String getMRPCDevicePath(Context context) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        String value = sharedPref.getString("mrpc_path", "*");
         return value;
     }
 

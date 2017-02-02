@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     private MRPC _mrpc;
     private float throttle_range;
+    private String mrpc_path;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         throttle_range = SettingsActivity.getThrottleRange(this);
+        mrpc_path = SettingsActivity.getMRPCDevicePath(this);
     }
 
     @Override
@@ -68,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendThrottle(float val) {
         if(_mrpc != null){
-            _mrpc.RPC("*.throttle", val, null, false);
+            _mrpc.RPC(mrpc_path + ".throttle", val, null, false);
         }
     }
     private void sendSteering(float val) {
         if(_mrpc != null){
-            _mrpc.RPC("*.steering", val, null, false);
+            _mrpc.RPC(mrpc_path + ".steering", val, null, false);
         }
     }
 
